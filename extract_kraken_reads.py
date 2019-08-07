@@ -184,6 +184,7 @@ def main():
         #create tree and save nodes with taxids in the list 
         base_nodes = {} 
         r_file = open(args.report_file,'r')
+         _ = r_file.readline()  # skip unclassified
         for line in r_file:
             #extract values
             report_vals = process_kraken_report(line)
