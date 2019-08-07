@@ -203,12 +203,12 @@ def main():
             while level_num != (prev_node.level_num + 1):
                 prev_node = prev_node.parent 
             #determine correct level ID 
-            if level_id == '-' or len(level_id) > 1:
+            if level_type == '-' or len(level_type) > 1:
                 if prev_node.level_id in main_lvls:
-                    level_id = prev_node.level_id + '1'
+                    level_type = prev_node.level_id + '1'
                 else:
                     num = int(prev_node.level_id[-1]) + 1
-                    level_id = prev_node.level_id[:-1] + str(num)
+                    level_type = prev_node.level_id[:-1] + str(num)
             #make node
             curr_node = Tree(taxid, level_num, level_type, None, prev_node)
             prev_node.add_child(curr_node)
